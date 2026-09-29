@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NOVA STUDIO Magazine · Finanzas en la economía digital</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f1f3d;--mustard:#e3a92c;--teal:#1b8a8f;--sky:#8cc8ea;--cream:#f7f1e3;--ink:#1a2238}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font:17px/1.75 'Space Grotesk',system-ui,sans-serif}
+a{color:var(--teal)}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px}
+.top{background:var(--navy);color:var(--cream);font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.top .wrap{display:flex;justify-content:space-between;padding:12px 22px;flex-wrap:wrap;gap:6px}
+.top a{color:var(--mustard);text-decoration:none}
+header.hero{background:var(--navy);color:var(--cream);padding:60px 0 0;position:relative;overflow:hidden}
+.hero .kicker{color:var(--mustard);font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:13px}
+.hero h1{font-family:Fraunces,serif;font-weight:900;font-size:clamp(38px,8vw,78px);line-height:1.02;margin:14px 0 18px}
+.hero h1 em{color:var(--mustard);font-weight:400}
+.hero p.lead{font-size:20px;max-width:620px;color:#d7dfee}
+.byline{margin:26px 0 0;font-size:14px;color:var(--sky);padding-bottom:40px}
+.hero svg{display:block;width:100%;height:auto;margin-top:-10px}
+.issue{position:absolute;right:22px;top:26px;width:92px;height:92px;border-radius:50%;background:var(--mustard);color:var(--navy);display:grid;place-items:center;text-align:center;font-weight:700;font-size:12px;line-height:1.2;transform:rotate(12deg)}
+.issue b{font-family:Fraunces,serif;font-size:30px;display:block}
+nav.toc{background:var(--cream);border-bottom:2px solid var(--navy);position:sticky;top:0;z-index:5}
+nav.toc .wrap{display:flex;gap:8px 22px;overflow-x:auto;padding:12px 22px;font-size:14px;font-weight:500}
+nav.toc a{color:var(--navy);text-decoration:none;white-space:nowrap}
+nav.toc a:hover{color:var(--teal)}
+section{padding:56px 0 8px}
+.tag{display:inline-block;background:var(--mustard);color:var(--navy);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;border-radius:99px}
+h2{font-family:Fraunces,serif;font-size:clamp(28px,5vw,42px);line-height:1.12;color:var(--navy);margin:14px 0 20px}
+h3{font-family:Fraunces,serif;color:var(--navy);font-size:22px;margin:0 0 8px}
+p{margin-bottom:16px}
+p.drop::first-letter{font-family:Fraunces,serif;font-weight:900;font-size:4.4em;float:left;line-height:.8;padding:6px 10px 0 0;color:var(--teal)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:24px 0}
+.card{border-radius:14px;padding:22px 24px}
+.card.pro{background:var(--teal);color:#fff}
+.card.con{background:var(--navy);color:var(--cream)}
+.card h3{color:inherit}
+.card ul{padding-left:18px}.card li{margin-bottom:8px;font-size:15.5px;line-height:1.55}
+blockquote{font-family:Fraunces,serif;font-style:italic;font-size:clamp(22px,4vw,30px);line-height:1.3;color:var(--navy);border-left:6px solid var(--mustard);padding:6px 0 6px 22px;margin:34px 0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:24px 0}
+.box{border:2px solid var(--navy);border-radius:14px;padding:20px 22px;background:#fffaf0}
+.box h3{display:flex;align-items:center;gap:10px}
+.dot{width:14px;height:14px;border-radius:50%;background:var(--teal);flex:none}
+.box.w .dot{background:var(--mustard)}
+.box ul{padding-left:18px;font-size:15.5px;line-height:1.55}.box li{margin-bottom:7px}
+.steps{counter-reset:s;margin:26px 0}
+.step{display:grid;grid-template-columns:56px 1fr;gap:16px;padding:18px 0;border-top:1px solid #c9bfa6}
+.step::before{counter-increment:s;content:counter(s);font-family:Fraunces,serif;font-weight:900;font-size:44px;line-height:1;color:var(--mustard);-webkit-text-stroke:0}
+.step h3{margin-bottom:4px}
+.step p{margin:0;font-size:16px}
+.tools{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 24px}
+.chip{background:var(--sky);color:var(--navy);font-weight:500;font-size:14px;padding:6px 14px;border-radius:99px}
+.media{margin:30px 0;background:var(--navy);border-radius:14px;overflow:hidden;color:var(--cream)}
+.media .frame{aspect-ratio:16/9;display:grid;place-items:center;text-align:center;padding:20px;font-size:14px;color:var(--sky);background:repeating-linear-gradient(45deg,#13264a,#13264a 14px,#0f1f3d 14px,#0f1f3d 28px)}
+.media iframe{width:100%;height:100%;border:0}
+.media figcaption{padding:12px 18px;font-size:13.5px}
+.bar{display:grid;grid-template-columns:120px 1fr 46px;align-items:center;gap:10px;font-size:14px;margin:8px 0}
+.bar i{display:block;height:14px;border-radius:8px;background:linear-gradient(90deg,var(--teal),var(--sky))}
+.bar span:last-child{font-weight:700;color:var(--navy)}
+.refs{background:var(--navy);color:var(--cream);margin-top:60px;padding:44px 0 50px}
+.refs h2{color:var(--mustard)}
+.refs li{margin:0 0 10px 20px;font-size:15px}
+.refs a{color:var(--sky)}
+footer{background:#0a1730;color:var(--sky);text-align:center;padding:22px;font-size:13.5px}
+@media(max-width:680px){.cols,.two{grid-template-columns:1fr}.issue{width:70px;height:70px;font-size:10px}.issue b{font-size:22px}.bar{grid-template-columns:90px 1fr 40px}}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap"><span>NOVA STUDIO Magazine · Edición #6</span><a href="https://juxndix.github.io/nova-studio/">← Volver al sitio</a></div></div>
+
+<header class="hero">
+  <div class="issue"><div><b>#6</b>FINTECH</div></div>
+  <div class="wrap">
+    <div class="kicker">Educación financiera · Economía digital</div>
+    <h1>Tu dinero ya vive en el <em>celular</em>: aprendamos a manejarlo</h1>
+    <p class="lead">Ventajas, riesgos y una estrategia real para que un estudio de diseño digital crezca con las finanzas en orden.</p>
+    <p class="byline">Por Juan Diego Guerrero Ramirez 11° · NOVA STUDIO · Skolmi</p>
+  </div>
+  <svg viewBox="0 0 900 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 80 C150 10 300 130 450 70 S750 0 900 60 V120 H0Z" fill="#1b8a8f"/>
+    <path d="M0 100 C200 40 350 130 520 90 S780 40 900 90 V120 H0Z" fill="#e3a92c"/>
+    <path d="M0 112 C250 80 450 125 650 105 S850 95 900 110 V120 H0Z" fill="#f7f1e3"/>
+  </svg>
+</header>
+
+<nav class="toc"><div class="wrap"><a href="#ventajas">01 Ventajas y desventajas</a><a href="#hábitos">02 Fortalezas y debilidades</a><a href="#estrategia">03 Estrategia NOVA STUDIO</a><a href="#fuentes">Referencias</a></div></nav>
+
+<main class="wrap">
+
+<section id="ventajas">
+  <span class="tag">01 · Panorama</span>
+  <h2>FinTech: cuando los bancos caben en el bolsillo</h2>
+  <p class="drop">FinTech es la unión de las palabras <em>finanzas</em> y <em>tecnología</em>: aplicaciones, billeteras digitales, pagos por código QR, créditos en línea e inversiones desde el celular. Hoy pagamos un domicilio, recibimos el dinero de un cliente o ahorramos sin pisar una oficina. Revisemos, con la cabeza fría, qué nos ofrece esta economía digital y qué nos exige a cambio.</p>
+
+  <div class="cols">
+    <div class="card pro">
+      <h3>Ventajas</h3>
+      <ul>
+        <li><b>Acceso e inclusión:</b> personas que antes no tenían cuenta hoy pueden ahorrar y pagar con solo un teléfono.</li>
+        <li><b>Rapidez y disponibilidad:</b> transferencias y pagos en segundos, las 24 horas.</li>
+        <li><b>Costos más bajos:</b> muchas plataformas cobran menos comisiones que los canales tradicionales.</li>
+        <li><b>Control en tiempo real:</b> vemos saldos y movimientos al instante, lo que facilita presupuestar.</li>
+        <li><b>Nuevos mercados:</b> un estudio puede cobrar a clientes de otras ciudades o países.</li>
+      </ul>
+    </div>
+    <div class="card con">
+      <h3>Desventajas</h3>
+      <ul>
+        <li><b>Fraudes y suplantación:</b> phishing, enlaces falsos y estafas por mensaje son cada vez más comunes.</li>
+        <li><b>Gasto impulsivo:</b> pagar con un toque hace que el dinero se sienta menos real.</li>
+        <li><b>Sobreendeudamiento:</b> créditos rápidos con intereses altos, fáciles de aceptar sin leer.</li>
+        <li><b>Dependencia tecnológica:</b> sin internet, batería o acceso a la cuenta, quedamos paralizados.</li>
+        <li><b>Privacidad y brecha digital:</b> compartimos datos sensibles y no todos tienen la misma formación.</li>
+      </ul>
+    </div>
+  </div>
+
+  <blockquote>La tecnología hace que pagar sea fácil; educarnos hace que gastar bien también lo sea.</blockquote>
+
+  <figure class="media">
+    <div class="frame" id="video">Cargando video…</div>
+    <figcaption>Video de apoyo · ¿Qué es una Fintech? (Explicación Fácil) · Better Wallet en Español, YouTube.</figcaption>
+  </figure>
+</section>
+
+<section id="hábitos">
+  <span class="tag">02 · Autodiagnóstico</span>
+  <h2>¿Cómo sabemos si nuestras finanzas digitales están sanas?</h2>
+  <p>Revisemos nuestros hábitos como quien revisa un proyecto de diseño: con criterio y sin excusas. Estas actividades nos permiten identificar, en la economía personal y familiar, qué estamos haciendo bien y qué debemos corregir.</p>
+
+  <div class="two">
+    <div class="box"><h3><span class="dot"></span>Fortalezas</h3>
+      <ul>
+        <li>Registrar ingresos y gastos cada semana (hoja de cálculo o app).</li>
+        <li>Tener un presupuesto con metas de ahorro claras.</li>
+        <li>Separar el dinero personal del dinero del proyecto o negocio.</li>
+        <li>Contar con un fondo de emergencia.</li>
+        <li>Usar contraseñas seguras y verificación en dos pasos.</li>
+        <li>Comparar costos y leer condiciones antes de aceptar un crédito.</li>
+      </ul></div>
+    <div class="box w"><h3><span class="dot"></span>Debilidades</h3>
+      <ul>
+        <li>No saber en qué se fue el dinero a fin de mes.</li>
+        <li>Compras impulsivas por promociones o anuncios en redes.</li>
+        <li>Pagar solo el mínimo de la tarjeta o depender de créditos rápidos.</li>
+        <li>Hacer clic en enlaces sospechosos o compartir claves.</li>
+        <li>Suscripciones olvidadas que se cobran cada mes.</li>
+        <li>Ausencia de ahorro y de conversación financiera en la familia.</li>
+      </ul></div>
+  </div>
+
+  <h3>Mini test: ¿cuántos hábitos ya tenemos?</h3>
+  <p>Marquemos mentalmente cuántas fortalezas de la lista cumplimos. La siguiente escala es orientativa:</p>
+  <div class="bar"><span>0–2 hábitos</span><i style="width:25%"></i><span>Alerta</span></div>
+  <div class="bar"><span>3–4 hábitos</span><i style="width:60%"></i><span>Vamos bien</span></div>
+  <div class="bar"><span>5–6 hábitos</span><i style="width:95%"></i><span>Sólido</span></div>
+  <p style="margin-top:14px">Lo importante no es el puntaje, sino que cada debilidad se convierta en una tarea concreta con fecha.</p>
+</section>
+
+<section id="estrategia">
+  <span class="tag">03 · Manos a la obra</span>
+  <h2>Estrategia de educación financiera para NOVA STUDIO</h2>
+  <p>NOVA STUDIO es un estudio de diseño digital: sus ingresos llegan por proyectos, pagos de clientes y suscripciones a herramientas creativas. Eso implica ingresos variables y gastos recurrentes en software. Por eso proponemos una estrategia en cuatro pasos, que refuerza lo que ya funciona y corrige lo que puede fallar.</p>
+
+  <div class="steps">
+    <div class="step"><div><h3>Ordenar: cuentas separadas y registro</h3><p>Abramos una cuenta digital exclusiva para el estudio y otra personal. Registremos cada ingreso y gasto en una hoja de Google Sheets con categorías: software, equipo, marketing, impuestos e imprevistos.</p></div></div>
+    <div class="step"><div><h3>Presupuestar: repartir cada pago recibido</h3><p>Al cobrar un proyecto, dividamos el dinero de inmediato: una parte para gastos fijos, otra para ahorro y fondo de emergencia, otra para reinversión (cursos, equipo) y una reserva para obligaciones tributarias. Como los ingresos varían, calculemos con el promedio de los últimos meses y no con el mejor mes.</p></div></div>
+    <div class="step"><div><h3>Protegerse: seguridad y control de deudas</h3><p>Activemos la verificación en dos pasos en todas las cuentas, desconfiemos de enlaces recibidos por mensaje y revisemos cada trimestre las suscripciones para cancelar las que no usemos. Antes de financiar un equipo, comparemos el costo total del crédito, no solo la cuota.</p></div></div>
+    <div class="step"><div><h3>Crecer: metas, facturación y aprendizaje</h3><p>Fijemos metas a 3, 6 y 12 meses (por ejemplo, un fondo equivalente a tres meses de gastos). Cobremos con facturas o cuentas de cobro claras, con anticipo del proyecto. Además, dediquemos una hora al mes a capacitarnos con cursos gratuitos de educación financiera.</p></div></div>
+  </div>
+
+  <h3>Recursos acordes a nuestro tipo de negocio</h3>
+  <div class="tools">
+    <span class="chip">Google Sheets / Calendar</span><span class="chip">Billetera digital del estudio</span><span class="chip">Facturas y cuentas de cobro</span><span class="chip">Cursos de educación financiera</span><span class="chip">Verificación en dos pasos</span><span class="chip">Recordatorios de pagos</span>
+  </div>
+
+  <blockquote>Un estudio creativo también es una empresa: si cuidamos los números, tendremos libertad para cuidar el diseño.</blockquote>
+  <p><b>Indicadores de éxito:</b> ahorrar cada mes el porcentaje acordado, llegar a fin de mes sin usar crédito de emergencia y no tener suscripciones olvidadas. Revisemos estos tres puntos cada trimestre y ajustemos el plan.</p>
+</section>
+
+</main>
+
+<section class="refs" id="fuentes">
+  <div class="wrap">
+    <h2>Referencias</h2>
+    <ol>
+      <li>Superintendencia Financiera de Colombia. Información y educación financiera para consumidores. <a href="https://www.superfinanciera.gov.co" target="_blank" rel="noopener">superfinanciera.gov.co</a></li>
+      <li>Banco de la República de Colombia. Sistema de pagos y educación económica y financiera. <a href="https://www.banrep.gov.co" target="_blank" rel="noopener">banrep.gov.co</a></li>
+      <li>Colombia Fintech. Asociación del ecosistema FinTech colombiano. <a href="https://www.colombiafintech.co" target="_blank" rel="noopener">colombiafintech.co</a></li>
+      <li>OCDE. Financial education (recursos y principios). <a href="https://www.oecd.org/finance/financial-education/" target="_blank" rel="noopener">oecd.org/finance/financial-education</a></li>
+      <li>Video de apoyo: <em>¿Qué es una Fintech? (Explicación Fácil)</em>, canal Better Wallet en Español. YouTube. <a href="https://www.youtube.com/watch?v=jx7fxRU0vxY" target="_blank" rel="noopener">youtube.com/watch?v=jx7fxRU0vxY</a></li>
+    </ol>
+    <p style="font-size:13.5px;color:var(--sky);margin-top:14px">Gráficos y diseño: elaboración propia con los colores y tipografías de NOVA STUDIO (Fraunces y Space Grotesk).</p>
+  </div>
+</section>
+
+<footer>© 2026 NOVA STUDIO · Juan Diego Guerrero Ramirez 11° · Taller 6, Semana #6</footer>
+
+<script>
+const VIDEO_ID = "jx7fxRU0vxY";
+if (VIDEO_ID) {
+  document.getElementById("video").innerHTML =
+    '<iframe src="https://www.youtube.com/embed/' + VIDEO_ID + '" allowfullscreen title="Video de apoyo"></iframe>';
+}
+</script>
+</body>
+</html>
